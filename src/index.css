@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  body {
+    background-color: #0d1310;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(244, 196, 48, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(30, 68, 47, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 10% 90%, rgba(255, 119, 34, 0.05) 0%, transparent 35%);
+    background-attachment: fixed;
+    touch-action: manipulation;
+  }
+}
+
+/* Custom subtle patterns and glow utilities */
+.dhokla-glow {
+  box-shadow: 0 0 25px -4px rgba(244, 196, 48, 0.35);
+}
+
+.saffron-glow {
+  box-shadow: 0 0 25px -4px rgba(255, 119, 34, 0.4);
+}
+
+.spice-pattern {
+  background-image: radial-gradient(#1e3b2b 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Touch controls button states */
+.touch-btn:active {
+  transform: scale(0.93);
+  filter: brightness(1.2);
+}
+
+/* Smooth keyframe for floating scores */
+@keyframes floatUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px) scale(1.05);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-35px) scale(0.95);
+  }
+}
+
+.animate-float-up {
+  animation: floatUpFade 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
